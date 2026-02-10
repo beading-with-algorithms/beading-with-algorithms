@@ -457,8 +457,16 @@
         <div class="italic text-center font-fun">Welcome to</div>
         <div class="mb-2 text-2xl font-bold text-center text-gray-700 font-fun">Beading with Algorithms</div>
         <div class="flex justify-center">
-          <div class="max-w-lg p-4 text-center">This is the app accompanying our book <a
-              class="italic text-gray-700 font-fun" href="">Beading with Algorithms</a>. With this tool you can explore
+          <div class="max-w-4xl p-4 text-center">
+            This is the app accompanying our book
+              <a class="italic text-gray-700 font-fun" href="https://www.worldscientific.com/worldscibooks/10.1142/14357" target="_blank" rel="noopener noreferrer">
+                Beading with Algorithms
+              </a>.
+            
+            <br/>
+(ISBN: 978-981-98-1487-9 (hardcover) / 978-981-98-1575-3 (softcover)).
+            <br/>
+            With this tool you can explore
             the world of and algorithms through simple and visually appealing rules.
             Specifically, explore one dimensional cellular automata on regular square grids (i.e., graph paper) and on staggered grids (i.e., beaded peyote stitch).
           </div>
@@ -472,7 +480,7 @@
         <div class="flex justify-center">
           <div class="text-center">Special thanks to <a href="https://www.vzome.com/author/" target="_blank" rel="noopener noreferrer">Scott Vorthmann</a></div>
         </div>
-        <div class="flex flex-row w-full gap-2 my-2">
+        <div class="flex flex-row gap-2 my-2" style="width: 90%; margin: auto;">
           <div><img class="w-full h-auto" src="files/ch1.t.png" alt=""></div>
           <div><img class="w-full h-auto" src="files/ch2.t.png" alt=""></div>
         </div>
