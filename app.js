@@ -7585,6 +7585,10 @@ function setParametersFromURL() {
     }
   }
   let parts = split(url, "?");
+  if ( parts.length == 1 ) {
+    setParametersFromShortCode( "DEFAULT" );
+    return;
+  }
   let inputString = parts.length == 2 ? parts[1] : "do the default!";
   if (vvverbose) console.log(inputString);
   for (let i = 0; i < preloadedStrings.length; i++) {
