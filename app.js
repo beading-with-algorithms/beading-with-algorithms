@@ -385,12 +385,12 @@ function screenshotAllLayouts() {
   currentPattern.placeRuleModules();
   if (comparisonLayout || gridLayout) {
     render();
-    saveBeadingCanvasAfterRender(false, false);
+    saveBeadingCanvasAfterRender(false, false, true);
   } else {
     let layoutNumber = getMainLayoutNumber(mainLayout);
     for (let i = 0; i < mainLayouts.length; i++) {
       render();
-      saveBeadingCanvasAfterRender(false, i === 0 ? true : false);
+      saveBeadingCanvasAfterRender(false, i === 0 ? true : false, true);
       let n = (layoutNumber + i + 1) % mainLayouts.length;
       mainLayout = getMainLayoutShortString(n);
       currentPattern.placeRuleModules();
@@ -441,7 +441,11 @@ function draw(callUpdateURL = true) {
   }
   if (vverbose) console.log("    _____________end draw_______________________");
 }
-function saveBeadingCanvasAfterRender(timeString, sidecarfile = false) {
+function saveBeadingCanvasAfterRender(
+  timeString,
+  sidecarfile = false,
+  largeWatermark = false,
+) {
   if (vverbose) console.log("saveBeadingCanvasAfterRender");
   let codeString;
   let shortString;
@@ -467,7 +471,37 @@ function saveBeadingCanvasAfterRender(timeString, sidecarfile = false) {
       : "-" + mainLayout;}
   let fileName = "beading" + codeString;
   if (verbose) console.log("Saving image: " + fileName + ".png");
-  saveCanvas(canvas, fileName + typeString, "png");
+  const outputCanvas = createGraphics(width, height);
+  outputCanvas.colorMode(RGB, 255, 255, 255, 255);
+  outputCanvas.image(canvas, 0, 0, width, height);
+  const watermarkLabel = "beadingwithalgorithms.org";
+  const watermarkScale = largeWatermark ? 3 : 1;
+  const fontSize = 20 * watermarkScale;
+  const boxPadX = 10 * watermarkScale;
+  const boxPadY = (largeWatermark ? 10 : 6) * watermarkScale;
+  const boxCorner = 6 * watermarkScale;
+  outputCanvas.push();
+  outputCanvas.textFont(font || "sans-serif");
+  outputCanvas.textAlign(CENTER, CENTER);
+  outputCanvas.textSize(fontSize);
+  const centerX = width / 2;
+  const centerY = height * .75;
+  const textWidth = outputCanvas.textWidth(watermarkLabel);
+  const textHeight = outputCanvas.textAscent() + outputCanvas.textDescent();
+  outputCanvas.noStroke();
+  outputCanvas.fill(0, 0, 0, 100);
+  outputCanvas.rect(
+    centerX - textWidth / 2 - boxPadX,
+    centerY - textHeight / 2 - boxPadY,
+    textWidth + boxPadX * 2,
+    textHeight + boxPadY * 2,
+    boxCorner,
+  );
+  outputCanvas.fill(255, 255, 255, 255);
+  outputCanvas.text(watermarkLabel, centerX, centerY);
+  outputCanvas.pop();
+  saveCanvas(outputCanvas.elt, fileName + typeString, "png");
+  outputCanvas.remove();
   if (sidecarfile) {
     if (verbose) console.log("Saving sidecar file for " + fileName);
     let strings = [getInfoString()];
