@@ -454,35 +454,29 @@
               d="M7.314 5.9l3.535-3.536A1 1 0 1 0 9.435.95L5.899 4.485 2.364.95A1 1 0 1 0 .95 2.364l3.535 3.535L.95 9.435a1 1 0 1 0 1.414 1.414l3.535-3.535 3.536 3.535a1 1 0 1 0 1.414-1.414L7.314 5.899z">
             </path>
           </svg></div>
-        <div class="italic text-center font-fun">Welcome to</div>
-        <div class="mb-2 text-2xl font-bold text-center text-gray-700 font-fun">Beading with Algorithms</div>
-        <div class="flex justify-center">
-          <div class="max-w-4xl p-4 text-center">
-            This is the app accompanying our book
+        <div class="flex flex-col h-full gap-4 md:flex-row">
+          <div class="md:w-3/5 md:pr-2">
+            <div class="italic text-center md:text-left font-fun">Welcome to</div>
+            <div class="mb-2 text-2xl font-bold text-center text-gray-700 md:text-left font-fun">Beading with Algorithms</div>
+            <div class="p-1 text-center md:text-left">
+              This is the app accompanying our book
               <a class="italic text-gray-700 font-fun" href="https://www.worldscientific.com/worldscibooks/10.1142/14357" target="_blank" rel="noopener noreferrer">
                 Beading with Algorithms
               </a>.
-            
-            <br/>
-(ISBN: 978-981-98-1487-9 (hardcover) / 978-981-98-1575-3 (softcover)).
-            <br/>
-            With this tool you can explore
-            the world of and algorithms through simple and visually appealing rules.
-            Specifically, explore one dimensional cellular automata on regular square grids (i.e., graph paper) and on staggered grids (i.e., beaded peyote stitch).
+              <br/>
+              (ISBN: 978-981-98-1487-9 (hardcover) / 978-981-98-1575-3 (softcover)).
+              <br/>
+              With this tool you can explore
+              the world of and algorithms through simple and visually appealing rules.
+              Specifically, explore one dimensional cellular automata on regular square grids (i.e., graph paper) and on staggered grids (i.e., beaded peyote stitch).
+            </div>
+            <div class="mt-2 text-center md:text-left">Software by <a href="https://rantonse.org/" target="_blank" rel="noopener noreferrer">Roger Antonsen</a></div>
+            <div class="text-center md:text-left">Concept by <a href="https://gwenbeads.etsy.com" target="_blank" rel="noopener noreferrer">Gwen Fisher</a></div>
+            <div class="text-center md:text-left">Special thanks to <a href="https://www.vzome.com/author/" target="_blank" rel="noopener noreferrer">Scott Vorthmann</a></div>
           </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="text-center">Software by <a href="https://rantonse.org/" target="_blank" rel="noopener noreferrer">Roger Antonsen</a></div>
-        </div>
-        <div class="flex justify-center">
-          <div class="text-center">Concept by <a href="https://gwenbeads.etsy.com" target="_blank" rel="noopener noreferrer">Gwen Fisher</a></div>
-        </div>
-        <div class="flex justify-center">
-          <div class="text-center">Special thanks to <a href="https://www.vzome.com/author/" target="_blank" rel="noopener noreferrer">Scott Vorthmann</a></div>
-        </div>
-        <div class="flex flex-row gap-2 my-2" style="width: 90%; margin: auto;">
-          <div><img class="w-full h-auto" src="files/ch1.t.png" alt=""></div>
-          <div><img class="w-full h-auto" src="files/ch2.t.png" alt=""></div>
+          <div class="flex items-center justify-center md:w-2/5">
+            <img class="w-full h-auto max-w-sm md:max-w-none" src="files/cover.jpg" alt="Beading with Algorithms cover image">
+          </div>
         </div>
       </div>
     </label>

@@ -4015,9 +4015,9 @@ input[type=range] {
     flex-grow: 0 !important
   }
 
-  .md\:flex-row {
+  /* .md\:flex-row {
     flex-direction: row !important
-  }
+  } */
 
   .md\:justify-start {
     justify-content: flex-start !important
